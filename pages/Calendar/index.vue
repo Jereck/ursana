@@ -3,7 +3,7 @@
     <v-row class="fill-height">
       <v-col>
         <v-sheet height="64">
-          <v-toolbar flat color="green lighten-2">
+          <v-toolbar flat color="green lighten-1" dark>
             <v-btn color="primary" class="mr-4" @click="dialog = true" dark>New Task</v-btn>
             <v-btn outlined class="mr-4" @click="setToday">Today</v-btn>
             <v-btn fab text small @click="prev">
@@ -16,10 +16,7 @@
             <v-spacer></v-spacer>
             <v-menu bottom right>
               <template v-slot:activator="{ on }">
-                <v-btn
-                  outlined
-                  v-on="on"
-                >
+                <v-btn outlined v-on="on">
                   <span>{{ typeToLabel[type] }}</span>
                   <v-icon right>mdi-menu-down</v-icon>
                 </v-btn>
@@ -60,7 +57,7 @@
           </v-card>
         </v-dialog>
 
-        <v-sheet height="600" elevation="3">
+        <v-sheet height="750" elevation="3">
           <v-calendar
             ref="calendar"
             v-model="focus"
@@ -76,8 +73,8 @@
             @change="updateRange"
           ></v-calendar>
           <v-menu v-model="selectedOpen" :close-on-content-click="false" :activator="selectedElement" offset-x>
-            <v-card color="grey darken-2" min-width="350px" flat>
-              <v-toolbar :color="selectedEvent.color" dark>
+            <v-card color="white darken-2" min-width="350px" flat>
+              <v-toolbar :color="selectedEvent.color">
                 <v-btn @click="deleteEvent(selectedEvent.id)" icon>
                   <v-icon>mdi-delete</v-icon>
                 </v-btn>

@@ -45,6 +45,8 @@ export default {
   data: () => ({
     name: null,
     tasks: [],
+    end: null,
+    color: "#1976D2",
     dialog: false
   }),
   mounted() {
