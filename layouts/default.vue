@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <AppBar />
     <v-container>
       <v-content>
@@ -14,6 +14,9 @@ import AppBar from '../components/AppBar';
 export default {
   components: {
     AppBar
-  }
+  },
+  created () {
+    this.$vuetify.theme.dark = false
+  },
 }
 </script>
